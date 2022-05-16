@@ -11,7 +11,7 @@ RSpec.describe 'Nested hash exercises' do
     end
 
     context 'when the given language name is ruby' do
-      it 'returns the information for ruby' do
+      xit 'returns the information for ruby' do
         expected_output = { initial_release: 'December 25, 1996', is_beautiful?: true }
         expect(find_language_information(hash, :ruby)).to eq(expected_output)
       end

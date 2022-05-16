@@ -3,7 +3,7 @@ require_relative '../exercises/nested_array_exercises'
 
 RSpec.describe 'Nested Array Exercises' do
   describe 'blank seating chart creation exercise' do
-    it 'returns a 2d array (chart) containing 2 rows, each containing nil 3 times' do
+    xit 'returns a 2d array (chart) containing 2 rows, each containing nil 3 times' do
       expected_output = [[nil, nil, nil], [nil, nil, nil]]
       expect(blank_seating_chart(2, 3)).to eq(expected_output)
     end
@@ -55,12 +55,12 @@ RSpec.describe 'Nested Array Exercises' do
   describe 'delete seat from grid exercise' do
     let(:array) { [[nil, 'Bob', 'Joe'], [nil, nil, 'Bill']] }
 
-    xit 'returns the array with the second item in the first row deleted' do
+    it 'returns the array with the second item in the first row deleted' do
       expected_output = [[nil, 'Joe'], [nil, nil, 'Bill']]
       expect(delete_seat_from_row(array, 0, 1)).to eq(expected_output)
     end
 
-    xit 'returns the array with the first item in the second row deleted' do
+    it 'returns the array with the first item in the second row deleted' do
       expected_output = [[nil, 'Bob', 'Joe'], [nil, 'Bill']]
       expect(delete_seat_from_row(array, 1, 0)).to eq(expected_output)
     end
@@ -69,12 +69,12 @@ RSpec.describe 'Nested Array Exercises' do
   describe 'delete row from chart exercise' do
     let(:array) { [[nil, 'Bob'], ['Joe', nil], [nil, 'Bill']] }
 
-    xit 'returns the array with the second row deleted' do
+    it 'returns the array with the second row deleted' do
       expected_output = [[nil, 'Bob'], [nil, 'Bill']]
       expect(delete_row_from_chart(array, 1)).to eq(expected_output)
     end
 
-    xit 'returns the array with the first row deleted' do
+    it 'returns the array with the first row deleted' do
       expected_output = [['Joe', nil], [nil, 'Bill']]
       expect(delete_row_from_chart(array, 0)).to eq(expected_output)
     end
@@ -84,7 +84,7 @@ RSpec.describe 'Nested Array Exercises' do
     let(:array) { [[nil, 'Bob', 'Joe'], [nil, nil, 'Bill']] }
 
     context "when there are three nil's in the given array" do
-      xit 'returns the number 3' do
+      it 'returns the number 3' do
         expect(count_empty_seats(array)).to eq(3)
       end
     end
@@ -92,12 +92,12 @@ RSpec.describe 'Nested Array Exercises' do
     context "when there are four nil's in the given array" do
       let(:array) { [[nil, 'Bob', nil], [nil, nil, 'Bill']] }
 
-      xit 'returns the number 4' do
+      it 'returns the number 4' do
         expect(count_empty_seats(array)).to eq(4)
       end
     end
 
-    xit 'does not mutate the original array' do
+    it 'does not mutate the original array' do
       count_empty_seats(array)
       expect(array).to eq([[nil, 'Bob', 'Joe'], [nil, nil, 'Bill']])
     end
@@ -113,7 +113,7 @@ RSpec.describe 'Nested Array Exercises' do
         ]
       end
 
-      xit 'returns the hash with the name Ruby' do
+      it 'returns the hash with the name Ruby' do
         expected_output = { name: 'Ruby', is_my_favorite?: true }
         expect(find_favorite(array)).to eq(expected_output)
       end
@@ -128,7 +128,7 @@ RSpec.describe 'Nested Array Exercises' do
         ]
       end
 
-      xit 'returns nil' do
+      it 'returns nil' do
         expected_output = nil
         expect(find_favorite(array)).to eq(expected_output)
       end
